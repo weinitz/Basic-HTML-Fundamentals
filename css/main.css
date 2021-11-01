@@ -31,8 +31,55 @@ main {
     justify-content: stretch;
     align-content: space-evenly;
     gap: 15px;
-    padding: 15px;
+    padding: 15px;    
+}
 
+main p:nth-of-type(2) {
+    font-weight: bold;
+    color: blue
+}
+
+main:not(form) {
+    grid-column: 1/5;
+}
+
+main form * {
+    vertical-align: middle;
+    border-radius: 5px;
+    background: beige;
+    padding-left: 5px;
+    margin-top: .25px;
+}
+
+input[type="checkbox"] {
+    vertical-align: top;
+    margin-top: .25em;
+    width: 1em;
+    height: 1em;
+}
+
+input[type="checkbox"] + label {
+    padding-right: 5px;
+
+}
+
+main form input {
+    
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: middle;
+}
+
+
+main form {
+    display: grid;
+    grid-gap: 10px;
+    justify-content: center;
+    grid-template-columns: 1fr repeat(3, fit-content(257px));
+    justify-items: end;
+    grid-column: 1 / 2;
 }
 
 main > h2, main > p {
@@ -64,9 +111,13 @@ aside {
 
 }
 
-aside ul {
+aside ul, aside ol {
     list-style: none;
+    padding: 0;
 }
+
+aside li:nth-child(even) > p {background: rgb(194, 85, 85)}
+aside li:nth-child(odd) > p {background: rgb(95, 177, 122)}
 
 footer {
     grid-area: footer;
@@ -122,6 +173,7 @@ header li:last-of-type {
 }
 
 header > h1 {
+    text-transform: uppercase;
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
     margin-right: 1rem;
